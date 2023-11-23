@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import pandas_datareader.data as dat
 from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error as mse
-import datetime
 import yfinance as yf
 from functions import linear_reg, decision_tree, random_forest, plot
 
