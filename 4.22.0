@@ -1,0 +1,5 @@
+Collecting fonttools
+  Using cached fonttools-4.45.0-cp311-cp311-win_amd64.whl.metadata (158 kB)
+Using cached fonttools-4.45.0-cp311-cp311-win_amd64.whl (2.2 MB)
+Installing collected packages: fonttools
+Successfully installed fonttools-4.45.0
