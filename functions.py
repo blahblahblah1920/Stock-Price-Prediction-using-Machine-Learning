@@ -7,27 +7,16 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-def plot(aap,valid,m_name):
+#funtion to plot the plots :D :
+def plot(aap,valid,m_name,s_name):
   fig = plt.figure()
-  plt.title("Apple's Stock Price Prediction using: {} Model".format(m_name))
-#   plt.xlabel("Days")
-#   plt.ylabel("Close Price USD ($)")
-#   #plt.subplot(2,2,1)
+  plt.title("{}'s Stock Price Prediction using: {} Model".format(s_name,m_name))
+  plt.xlabel("Days")
+  plt.ylabel("Close Price USD ($)")
   plt.plot(aap['Date'],aap["Close"])
   plt.plot(valid['Date'],valid[["Close", "Predictions"]])
   plt.legend(["Original", "Valid", "Predictions"])
   st.plotly_chart(fig)
-  #plt.legend(["Original", "Valid", "Predictions"])
-  #plt.subplot(2,2,3)
-#   plt.plot(aap["Close"])
-#   plt.plot(valid[["Close", "Predictions"]])
-#   plt.xlim(1100, len(aap['Close']))
-#   plt.title("Apple's Stock Price Prediction using Linear Model")
-#   plt.xlabel("Days")
-#   plt.ylabel("Close Price USD ($)")
-#   plt.legend(['original',"Valid", "Predictions"])
-  #plt.xticks(aap['Date'])
-#   st.plotly_chart(fig)
 
 # Linear model function:
 def linear_reg(aap, days):
@@ -56,15 +45,15 @@ def linear_reg(aap, days):
   linearPrediction = linear.predict(x_tobePred)
 
   # Finding the Root Mean Squared Error:
-  rmse = np.sqrt(mse(linearPrediction,aap['Close'].tail(futureDays)))
+  rmse = np.round(np.sqrt(mse(linearPrediction,aap['Close'].tail(futureDays))),3)
   st.write('RMSE: ', rmse)
   valid = pd.DataFrame({'Date': aap['Date'].tail(days),'Close': aap['Close'].tail(days)})
   valid['Predictions'] = linearPrediction
   return valid
-  
-  
+
 # Decision Tree Model Function:
 def decision_tree(aap, days):
+  st.header('Decision Tree Model: ')
   futureDays = days
 
   # create a new target column shifted 'X' units/days up
@@ -89,15 +78,15 @@ def decision_tree(aap, days):
   treePrediction = tree.predict(x_tobePred)
 
   # Finding the Root Mean Squared Error:
-  rmse = np.sqrt(mse(treePrediction,aap['Close'].tail(futureDays)))
+  rmse = np.round(np.sqrt(mse(treePrediction,aap['Close'].tail(futureDays))),3)
   st.write('RMSE: ', rmse)
   valid = pd.DataFrame({'Date': aap['Date'].tail(days),'Close': aap['Close'].tail(days)})
   valid['Predictions'] = treePrediction
   return valid
 
-
 # Random Forest Model Function:  
 def random_forest(aap, days):
+  st.header('Random Forest Model: ')
   futureDays = days
 
   # create a new target column shifted 'X' units/days up
@@ -122,7 +111,7 @@ def random_forest(aap, days):
   randPrediction = rand.predict(x_tobePred)
 
   # Finding the Root Mean Squared Error:
-  rmse = np.sqrt(mse(randPrediction,aap['Close'].tail(futureDays)))
+  rmse = np.round(np.sqrt(mse(randPrediction,aap['Close'].tail(futureDays))),3)
   st.write('RMSE: ', rmse)
   valid = pd.DataFrame({'Date': aap['Date'].tail(days),'Close': aap['Close'].tail(days)})
   valid['Predictions'] = randPrediction
