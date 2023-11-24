@@ -12,30 +12,16 @@ end_date = datetime.datetime.now()
 stock = st.selectbox('Select a company for which you want to see the price prediction: ',['Apple','Google','Tesla','Meta','Amazon'])
 if stock == 'Apple':
     data = yf.download('AAPL', start=start_date, end=end_date)
-    data.to_csv('Apple2010.csv')
-    aap = pd.read_csv(r'C:\Users\prana\OneDrive\Desktop\Streamlit\Apple2010.csv')
-    aap['Date'] = pd.to_datetime(aap['Date'])
 elif stock == 'Google':
     data = yf.download('GOOGL', start=start_date, end=end_date)
-    data.to_csv('Google2010.csv')
-    aap = pd.read_csv(r'C:\Users\prana\OneDrive\Desktop\Streamlit\Google2010.csv')
-    aap['Date'] = pd.to_datetime(aap['Date'])
 elif stock == 'Tesla':
     data = yf.download('TSLA', start=start_date, end=end_date)
-    data.to_csv('Tesla2010.csv')
-    aap = pd.read_csv(r'C:\Users\prana\OneDrive\Desktop\Streamlit\Tesla2010.csv')
-    aap['Date'] = pd.to_datetime(aap['Date'])
 elif stock == 'Meta':
     data = yf.download('META', start=start_date, end=end_date)
-    data.to_csv('Meta2010.csv')
-    aap = pd.read_csv(r'C:\Users\prana\OneDrive\Desktop\Streamlit\Meta2010.csv')
-    aap['Date'] = pd.to_datetime(aap['Date'])
 elif stock == 'Amazon':
     data = yf.download('AMZN', start=start_date, end=end_date)
-    aap = data.reset_index()
-    # data.to_csv('Amazon2010.csv')
-    # aap = pd.read_csv(r'C:\Users\prana\OneDrive\Desktop\Streamlit\Amazon2010.csv')
-    aap['Date'] = pd.to_datetime(aap['Date'])
+    
+aap = data.reset_index()
 
 st.header('{} Stock Price Prediction'.format(str(stock)))
 
