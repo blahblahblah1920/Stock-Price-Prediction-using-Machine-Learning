@@ -20,7 +20,7 @@ def plot(aap,valid,m_name,s_name):
   plt.plot(aap['Date'],aap["Close"])
   plt.plot(valid['Date'],valid[["Close", "Predictions"]])
   plt.legend(["Original", "Valid", "Predictions"])
-  st.plotly_chart(fig)
+  plt.show()
 
 # Fit Model function:
 def model_pred(aap, days,m_name):
