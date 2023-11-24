@@ -32,8 +32,9 @@ elif stock == 'Meta':
     aap['Date'] = pd.to_datetime(aap['Date'])
 elif stock == 'Amazon':
     data = yf.download('AMZN', start=start_date, end=end_date)
-    data.to_csv('Amazon2010.csv')
-    aap = pd.read_csv(r'C:\Users\prana\OneDrive\Desktop\Streamlit\Amazon2010.csv')
+    aap = data.reset_index()
+    # data.to_csv('Amazon2010.csv')
+    # aap = pd.read_csv(r'C:\Users\prana\OneDrive\Desktop\Streamlit\Amazon2010.csv')
     aap['Date'] = pd.to_datetime(aap['Date'])
 
 st.header('{} Stock Price Prediction'.format(str(stock)))
