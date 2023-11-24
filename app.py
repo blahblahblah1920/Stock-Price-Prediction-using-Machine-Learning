@@ -10,7 +10,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error as mse
-import plotly.tools
 
 #funtion to plot the plots :D :
 def plot(aap,valid,m_name,s_name):
