@@ -13,14 +13,14 @@ from sklearn.metrics import mean_squared_error as mse
 
 #funtion to plot the plots :D :
 def plot(aap,valid,m_name,s_name):
-#   fig = plt.figure()
+  fig = plt.figure()
   plt.title("{}'s Stock Price Prediction using {} Model".format(s_name,m_name))
   plt.xlabel("Days", fontsize = 14)
   plt.ylabel("Close Price USD ($)", fontsize = 14)
   plt.plot(aap['Date'],aap["Close"])
   plt.plot(valid['Date'],valid[["Close", "Predictions"]])
   plt.legend(["Original", "Valid", "Predictions"])
-  plt.show()
+  st.write(fig)
 
 # Fit Model function:
 def model_pred(aap, days,m_name):
