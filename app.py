@@ -2,17 +2,14 @@ import streamlit as st
 import datetime
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import pandas_datareader.data as dat
-from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error as mse
 import yfinance as yf
 from functions import model_pred, plot
-from ta import add_all_ta_features
 
 start_date = datetime.datetime(2019, 1, 1)
 end_date = datetime.datetime.now()
-stock = st.sidebar.selectbox('Select a company for which you want to see the price prediction: ',['Apple','Google','Tesla','Meta','Amazon'])
+stock = st.selectbox('Select a company for which you want to see the price prediction: ',['Apple','Google','Tesla','Meta','Amazon'])
 if stock == 'Apple':
     data = yf.download('AAPL', start=start_date, end=end_date)
     data.to_csv('Apple2010.csv')

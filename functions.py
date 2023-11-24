@@ -6,7 +6,6 @@ from sklearn.metrics import mean_squared_error as mse
 import pandas as pd
 import numpy as np
 import streamlit as st
-from ta import add_all_ta_features
 
 #funtion to plot the plots :D :
 def plot(aap,valid,m_name,s_name):
