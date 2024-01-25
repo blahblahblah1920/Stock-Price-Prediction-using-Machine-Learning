@@ -6,7 +6,7 @@ This a group project created as a part of **5502: Principles and Techniques of D
 , [Pranav](https://www.linkedin.com/in/pranav-moses-2142b7154/)
 and [Sabeeha](https://www.linkedin.com/in/sabiha-tabassum-shaik-23a105241/).
 
-Link to the web application: [link](https://group8.streamlit.app/)
+Link to the web application: [link](https://group8.streamlit.app/) Please use Light Mode.
 
 ⚙️ Tools Used:
 
