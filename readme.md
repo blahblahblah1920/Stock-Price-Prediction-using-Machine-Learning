@@ -1,6 +1,6 @@
 ## Stock Price Prediction Using ML Algorithms 📈
 
-This a group project created as a part of **5502: Principles and Techniques of DataScience** course at **University of North Texas** by:           
+This is a group project created as a part of **5502: Principles and Techniques of DataScience** course at **University of North Texas** by:           
 [Chandrahaas](https://www.linkedin.com/in/chandrahaas-kalanadhabhatla/),
 [Charmika](https://www.linkedin.com/in/charmika-sadhula-2286a0209/), [Divya](https://www.linkedin.com/in/divyadanda/)
 , [Pranav](https://www.linkedin.com/in/pranav-moses-2142b7154/)
